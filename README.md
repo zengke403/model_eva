@@ -3,15 +3,6 @@
 ## 简介:
 
 用于二分类概率类模型评估，包含ROC曲线、增益曲线、提升曲线、洛伦兹曲线、ks曲线等绘制方法
-
-## 示例:
-
-ROC曲线:
-    
-    from eva import binary_evaluation
-    
-    binary_evaluation(y_true = test_target,y_pred = test_est_p).plot_roc(color='red')
-    binary_evaluation(y_true = train_target,y_pred = train_est_p).plot_roc(color='blue')
     
 ## 输入:
 
@@ -38,3 +29,12 @@ ROC曲线:
 + **title**: str,标题
 + **xlabel**: str,x轴标签
 + **ylabel**: str,y轴标签
+
+## 示例:
+
+ROC曲线:
+    
+    from eva import binary_evaluation
+    
+    binary_evaluation(y_true = test_target,y_pred = test_est_p).plot_roc(color='red')
+    binary_evaluation(y_true = train_target,y_pred = train_est_p).plot_roc(color='blue')
