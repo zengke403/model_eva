@@ -39,4 +39,6 @@ ROC曲线:
     binary_evaluation(y_true = test_target,y_pred = test_est_p).plot_roc(color='red')
     binary_evaluation(y_true = train_target,y_pred = train_est_p).plot_roc(color='blue')
 
-![image](https://github.com/zengke403/model_eva/raw/master/roc.png)
+<center>
+<img src="https://github.com/zengke403/model_eva/raw/master/roc.png" width = "400" height = "300" alt="ROC" />
+</center>
