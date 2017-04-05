@@ -32,8 +32,8 @@ ROC曲线:
     **plot_precision_recall()**: 绘制精准率-召回率曲线，功能与ROC曲线类似，但在样本不平衡时，ROC曲线更佳稳健                              
 
 ## 绘图参数
-
-    **color**: str,颜色
+    
+    **color**: str,颜色
     **legend**: str,图例名
     **title**: str,标题
     **xlabel**: str,x轴标签
