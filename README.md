@@ -37,8 +37,8 @@ ROC曲线:
  ```python
  from eva import binary_evaluation
     
- binary_evaluation(y_true = test_target,y_pred = test_est_p).plot_roc(color='red',legend='test')
  binary_evaluation(y_true = train_target,y_pred = train_est_p).plot_roc(color='blue',legend='train')
+ binary_evaluation(y_true = test_target,y_pred = test_est_p).plot_roc(color='red',legend='test')
 ```
 
 <center>
