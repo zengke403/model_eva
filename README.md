@@ -8,6 +8,7 @@
 
 + **y_true**:一维np.array对象，实际值
 + **y_pred**:一维np.array对象，预测概率
++ **precision**:bool，True时cutoff阈值由预测概率逐一产生(速度慢，精度高)，False时cutoff阈值分段产生(速度快，精度低)，默认False
 
 ## 方法：
 
