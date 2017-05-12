@@ -15,6 +15,7 @@ class binary_evaluation:
     输入:
         y_true:一维np.array对象，实际值
         y_pred:一维np.array对象，预测概率
+        precision:bool，True时cutoff阈值由预测概率逐一产生(速度慢，精度高)，False时cutoff阈值分段产生(速度快，精度低)，默认False
     方法：
         confusion_matrix(): 计算混淆矩阵的指标   
         threhold(): 产生cut-off阈值
@@ -28,10 +29,11 @@ class binary_evaluation:
         plot_precision_recall(): 绘制精准率-召回率曲线，功能与ROC曲线类似，但在样本不平衡时，ROC曲线更佳稳健                              
     """
     
-    def __init__(self,y_true,y_pred):
+    def __init__(self,y_true,y_pred,precision=False):
         
         self.true = y_true
         self.pred = y_pred
+        self.precision = precision
         
     
     def confusion_matrix(self,pred):
@@ -54,8 +56,14 @@ class binary_evaluation:
         min_score = min(self.pred) #预测概率最大值
         max_score = max(self.pred) #预测概率最小值
         
-         # 产生分阈值
-        thr = np.linspace(min_score, max_score, 100)
+         # 精度要求下产生分阈值
+        if self.precision is True:
+            thr = self.pred
+        elif self.precision is False:
+            thr = np.linspace(min_score, max_score,100)
+        else:
+            raise ValueError('precision should be True or False!')
+        
         return(thr)
 
         
